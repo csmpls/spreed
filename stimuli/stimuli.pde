@@ -47,8 +47,10 @@ void setup() {
     myChart.setStrokeWeight(2.5);
  
  
- entropyLogName = "bsr/" + participantNumber + "-" + condition + ".txt";
- rawLogName = "bsr/" + participantNumber + "-" + condition + "-raw.txt";
+ String timestamp = day() + "-" + month() + "-" + year() + "_" + hour() + ":" + minute();
+ 
+ entropyLogName = "bsr/" + participantNumber + "-" + condition + "-" + timestamp + ".txt";
+ rawLogName = "bsr/" + participantNumber + "-" + condition + "-" + timestamp + "-raw.txt";
 
   
   mindset = new MindSet(this);

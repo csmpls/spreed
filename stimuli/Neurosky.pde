@@ -42,7 +42,7 @@ void mindSetRawEvent(MindSet ms){
             BufferedWriter entropyOut = new BufferedWriter(fstream);
             float up = getNextUpdateTime();
             // add date here
-            entropyOut.write(System.currentTimeMillis() + "," + Float.toString(up) + "," + Float.toString(entropy));
+            entropyOut.write(System.currentTimeMillis() + "," + Float.toString(up) + "," + Float.toString(entropy) + "," + getCurrentWord());
             entropyOut.newLine(); 
             entropyOut.close();
 
@@ -57,7 +57,7 @@ void mindSetRawEvent(MindSet ms){
             
             FileWriter fstream = new FileWriter(rawLogName, true);
             BufferedWriter rawOut = new BufferedWriter(fstream);
-            rawOut.write(System.currentTimeMillis() + "," + Float.toString(ms.getCurrentRawData()));
+            rawOut.write(System.currentTimeMillis() + "," + Float.toString(ms.getCurrentRawData()) + "," + getCurrentWord());
             rawOut.newLine(); 
             rawOut.close();
 

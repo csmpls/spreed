@@ -21,7 +21,7 @@ void drawTextFlashScreen() {
       baseline-=5;
     }
     
-    baseline = constrain(baseline,80,400);
+    baseline = constrain(baseline,80,350);
     println(baseline);
   }
   

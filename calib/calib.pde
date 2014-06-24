@@ -4,6 +4,8 @@ import java.io.*;
 
 
 int participantNumber;
+
+int nextLog = 500;
   
 void setup() {
   
@@ -26,6 +28,11 @@ void draw() {
 
  drawTextFlashScreen();
 
+ if (millis() > nextLog) {
+ 	writeLog();
+ 	nextLog += 500;
+ }
+
   
 }
 
@@ -33,3 +40,26 @@ boolean sketchFullScreen() {
   return true;
 }
 
+
+void writeLog() {
+
+ String timestamp = day() + "-" + month() + "-" + year() + "_" + hour() + ":" + minute();
+ String fname = "bsr/" + participantNumber + "-calibration-" + timestamp + ".txt";
+
+ String logline = System.currentTimeMillis() + "," + nextUpdate + "," + getCurrentWord();
+
+ writeToFile(fname,logline);
+ 
+
+}
+
+void writeToFile(String filename,String line) {
+  
+  try {
+
+	FileWriter fstream = new FileWriter(filename, true);
+	BufferedWriter rawOut = new BufferedWriter(fstream);
+	rawOut.write(line);
+	rawOut.newLine(); 
+	rawOut.close();}catch(Exception e){}
+}

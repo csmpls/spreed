@@ -27,12 +27,6 @@ void draw() {
   background(0);
 
  drawTextFlashScreen();
-
- if (millis() > nextLog) {
- 	writeLog();
- 	nextLog += 500;
- }
-
   
 }
 

@@ -35,6 +35,7 @@ void drawTextFlashScreen() {
 String getCurrentWord() {
   if (showNewWord()) {
     text_i++;
+    writeLog();
   }
   String word="";
   try {

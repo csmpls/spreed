@@ -10,7 +10,7 @@ int nextLog = 500;
 void setup() {
   
   // participant number290
-  participantNumber = 9;
+  participantNumber = 50;
   
   // baseline reading speed
   baseline = 250;
